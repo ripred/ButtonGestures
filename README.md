@@ -1,9 +1,7 @@
 Button Gestures Library
 
-This library allows you to use a single push button for
-up to 6 different functions.  The functions can be pre-registered
-so that they are automatically called when the appropriate gesture
-has been entered on the button.
+This library allows you to use a single push button to be
+able to invoke up to 6 different functions.
 
 The button gestures include:
 
@@ -14,3 +12,5 @@ The button gestures include:
     * Double press long  (double tap and hold)
     * Triple press short (triple tap)
     * Triple press long  (triple tap and hold)
+
+Easy to use. Includes example sketch showing basic use.
