@@ -47,31 +47,28 @@
 #define  KEYLONGDELAY             (KEYDBDELAY * 20) // how long to consider a pressed button a "long press" versus a "short press"
 #define  ALLOWED_MULTIPRESS_DELAY (KEYDBDELAY * 7)  // the amount of time allowed between multiple "taps" to be considered part of the last "tap"
 
-typedef void (*ButtonPressCallback)(const uint8_t, const uint8_t);
+typedef void (*ButtonPressCallback)(const uint8_t /*_pin*/, const uint8_t /*_state*/);
 
 struct ButtonGestures {
+private:
     uint8_t     state;
     uint8_t     pin;
     int         active;
     int         input_mode;
-    struct {
+    struct Callbacks {
         uint8_t                 state;
         ButtonPressCallback     func;
-    } functors[7] {
-        { NONE,    nullptr },
-        { SHORT1,  nullptr },
-        { LONG1,   nullptr },
-        { SHORT2,  nullptr },
-        { LONG2,   nullptr },
-        { SHORT3,  nullptr },
-        { LONG3,   nullptr }
-    };
+    } functors[6];
 
-    ButtonGestures(int _pin);
-    ButtonGestures(int _pin, int _active);
-    ButtonGestures(int _pin, int _active, int _input_mode);
+    void init_functors();
+    ButtonGestures() = delete;
 
-    bool set_callback(const uint8_t _state, ButtonPressCallback _cb);
+public:
+    ButtonGestures(const int _pin);
+    ButtonGestures(const int _pin, int _active);
+    ButtonGestures(const int _pin, int _active, int _input_mode);
+
+    bool set_callback(const uint8_t _state, const ButtonPressCallback _cb);
     ButtonPressCallback callback(const uint8_t _state) const;
     void set_button_input();
     bool button_pressed();
