@@ -1,0 +1,51 @@
+########################################
+# Syntax Coloring Map for ButtonGestures
+########################################
+# 
+########################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ButtonGestures          KEYWORD1
+ButtonPressCallback     KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+ButtonGestures           KEYWORD2
+set_button_input         KEYWORD2
+button_pressed           KEYWORD2
+check_button_gesture     KEYWORD2
+check_button             KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+NOT_PRESSED                 LITERAL1
+SINGLE_BUTTON               LITERAL1
+DOUBLE_BUTTON               LITERAL1
+TRIPLE_BUTTON               LITERAL1
+SHORT_PRESS                 LITERAL1
+LONG_PRESS                  LITERAL1
+SINGLE_PRESS_SHORT          LITERAL1
+SINGLE_PRESS_LONG           LITERAL1
+DOUBLE_PRESS_SHORT          LITERAL1
+DOUBLE_PRESS_LONG           LITERAL1
+TRIPLE_PRESS_SHORT          LITERAL1
+TRIPLE_PRESS_LONG           LITERAL1
+KEYDBDELAY                  LITERAL1
+KEYLONGDELAY                LITERAL1
+ALLOWED_MULTIPRESS_DELAY    LITERAL1
+
+# Shorter alias' for the same
+# button gestures:
+
+NONE                        LITERAL1
+SHORT1                      LITERAL1
+LONG1                       LITERAL1
+SHORT2                      LITERAL1
+LONG2                       LITERAL1
+SHORT3                      LITERAL1
+LONG3                       LITERAL1
