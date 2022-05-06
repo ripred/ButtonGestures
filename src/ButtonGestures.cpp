@@ -69,9 +69,6 @@ ButtonPressCallback ButtonGestures::callback(const uint8_t _state) const {
     for (unsigned index=0; index < (sizeof(functors)/sizeof(*functors)); ++index) {
         if (_state == functors[index].state) {
             if (nullptr == functors[index].func) {
-                Serial.print("Functor for ");
-                Serial.print(_state, HEX);
-                Serial.println("is nullptr.");
                 return nullptr;
             }
             functors[index].func(pin, _state);
