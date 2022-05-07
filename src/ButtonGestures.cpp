@@ -15,15 +15,6 @@
 #include <Arduino.h>
 #include "ButtonGestures.h"
 
-void ButtonGestures::init_functors() {
-    functors[0].state = SHORT1;  functors[0].func = nullptr;
-    functors[1].state = LONG1;   functors[1].func = nullptr;
-    functors[2].state = SHORT2;  functors[2].func = nullptr;
-    functors[3].state = LONG2;   functors[3].func = nullptr;
-    functors[4].state = SHORT3;  functors[4].func = nullptr;
-    functors[5].state = LONG3;   functors[5].func = nullptr;
-}
-
 ButtonGestures::ButtonGestures(const int _pin) :
     state(NONE),
     pin(_pin),
@@ -31,7 +22,6 @@ ButtonGestures::ButtonGestures(const int _pin) :
     input_mode(INPUT)
 {
     set_button_input();
-    init_functors();
 }
 
 ButtonGestures::ButtonGestures(const int _pin, const int _active) :
@@ -41,7 +31,6 @@ ButtonGestures::ButtonGestures(const int _pin, const int _active) :
     input_mode(INPUT)
 {
     set_button_input();
-    init_functors();
 }
 
 ButtonGestures::ButtonGestures(const int _pin, const int _active, const int _input_mode) :
@@ -51,32 +40,30 @@ ButtonGestures::ButtonGestures(const int _pin, const int _active, const int _inp
     input_mode(_input_mode)
 {
     set_button_input();
-    init_functors();
 }
 
 bool ButtonGestures::set_callback(const uint8_t _state, const ButtonPressCallback _cb) {
-    for (unsigned index=0; index < (sizeof(functors)/sizeof(*functors)); ++index) {
-        if (_state == functors[index].state) {
-            functors[index].func = _cb;
-            return true;
-        }
+    switch (_state) {
+        default:        return false;
+        case SHORT1:    short1 = _cb;   return true;
+        case  LONG1:     long1 = _cb;   return true;
+        case SHORT2:    short2 = _cb;   return true;
+        case  LONG2:     long2 = _cb;   return true;
+        case SHORT3:    short3 = _cb;   return true;
+        case  LONG3:     long3 = _cb;   return true;
     }
-
-    return false;
 }
 
 ButtonPressCallback ButtonGestures::callback(const uint8_t _state) const {
-    for (unsigned index=0; index < (sizeof(functors)/sizeof(*functors)); ++index) {
-        if (_state == functors[index].state) {
-            if (nullptr == functors[index].func) {
-                return nullptr;
-            }
-            functors[index].func(pin, _state);
-            return functors[index].func;
-        }
+    switch (_state) {
+        default:        return nullptr;
+        case SHORT1:    if (nullptr == short1) { return nullptr; } else { short1(pin, _state);  return short1; }
+        case  LONG1:    if (nullptr ==  long1) { return nullptr; } else {  long1(pin, _state);  return  long1; }
+        case SHORT2:    if (nullptr == short2) { return nullptr; } else { short2(pin, _state);  return short2; }
+        case  LONG2:    if (nullptr ==  long2) { return nullptr; } else {  long2(pin, _state);  return  long2; }
+        case SHORT3:    if (nullptr == short3) { return nullptr; } else { short3(pin, _state);  return short3; }
+        case  LONG3:    if (nullptr ==  long3) { return nullptr; } else {  long3(pin, _state);  return  long3; }
     }
-
-    return nullptr;
 }
 
 /*\
@@ -177,7 +164,7 @@ uint8_t ButtonGestures::check_button() {
     uint8_t newstate = check_button_gesture();
     if (newstate & LONG_PRESS) {
         if (state & LONG_PRESS) {
-            newstate = LONG_PRESS | (state & 0x0F);
+            newstate = LONG_PRESS | (state & BUTTON_MASK);
             callback(newstate);
             return newstate;
         }
