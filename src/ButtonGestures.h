@@ -24,8 +24,10 @@
 #define  DOUBLE_BUTTON       0x02
 #define  TRIPLE_BUTTON       0x04
 
-#define  SHORT_PRESS         0x10
-#define  LONG_PRESS          0x20
+#define  BUTTON_MASK         0x07
+
+#define  SHORT_PRESS         0x08
+#define  LONG_PRESS          0x10
 
 #define  SINGLE_PRESS_SHORT (SINGLE_BUTTON | SHORT_PRESS)
 #define  SINGLE_PRESS_LONG  (SINGLE_BUTTON | LONG_PRESS)
@@ -48,6 +50,7 @@
 #define  ALLOWED_MULTIPRESS_DELAY (KEYDBDELAY * 7)  // the amount of time allowed between multiple "taps" to be considered part of the last "tap"
 
 typedef void (*ButtonPressCallback)(const uint8_t /*_pin*/, const uint8_t /*_state*/);
+typedef ButtonPressCallback BpCb;
 
 struct ButtonGestures {
 private:
@@ -55,12 +58,14 @@ private:
     uint8_t     pin;
     int         active;
     int         input_mode;
-    struct Callbacks {
-        uint8_t                 state;
-        ButtonPressCallback     func;
-    } functors[6];
 
-    void init_functors();
+    BpCb        short1 {nullptr};
+    BpCb        long1  {nullptr};
+    BpCb        short2 {nullptr};
+    BpCb        long2  {nullptr};
+    BpCb        short3 {nullptr};
+    BpCb        long3  {nullptr};
+
     ButtonGestures() = delete;
 
 public:
