@@ -32,9 +32,11 @@ DOUBLE_PRESS_SHORT          LITERAL1
 DOUBLE_PRESS_LONG           LITERAL1
 TRIPLE_PRESS_SHORT          LITERAL1
 TRIPLE_PRESS_LONG           LITERAL1
+BUTTON_MASK                 LITERAL1
 KEYDBDELAY                  LITERAL1
 KEYLONGDELAY                LITERAL1
 ALLOWED_MULTIPRESS_DELAY    LITERAL1
+
 # Shorter alias' for the same button gestures:
 NONE                        LITERAL1
 SHORT1                      LITERAL1
