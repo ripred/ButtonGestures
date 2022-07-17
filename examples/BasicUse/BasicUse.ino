@@ -42,7 +42,7 @@ void report_button(const uint8_t state, const char* const label = NULL)  {
 
 
 void setup(void) {
-    Serial.begin(2000000);
+    Serial.begin(115200);
     uint32_t timer = millis() + 2000;
     while (!Serial && millis() < timer);
     Serial.flush();
