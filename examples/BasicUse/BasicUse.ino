@@ -21,18 +21,19 @@ ButtonGestures  button(BUTTON_PIN, LOW, INPUT_PULLUP);
 //
 void report_button(const uint8_t state, const char* const label = NULL)  {
     switch (state) {
-        case SINGLE_PRESS_SHORT: Serial.print(F("Single button short press")); break;
-        case SINGLE_PRESS_LONG:  Serial.print(F("Single button long  press")); break;
-        case DOUBLE_PRESS_SHORT: Serial.print(F("Double button short press")); break;
-        case DOUBLE_PRESS_LONG:  Serial.print(F("Double button long  press")); break;
-        case TRIPLE_PRESS_SHORT: Serial.print(F("Triple button short press")); break;
-        case TRIPLE_PRESS_LONG:  Serial.print(F("Triple button long  press")); break;
+        case SINGLE_PRESS_SHORT: Serial.print(F("Single click and release"));   break;
+        case SINGLE_PRESS_LONG:  Serial.print(F("Single click and hold"));      break;
+        case DOUBLE_PRESS_SHORT: Serial.print(F("Double click and release"));   break;
+        case DOUBLE_PRESS_LONG:  Serial.print(F("Double click and hold"));      break;
+        case TRIPLE_PRESS_SHORT: Serial.print(F("Triple click and release"));   break;
+        case TRIPLE_PRESS_LONG:  Serial.print(F("Triple click and hold"));      break;
+
+        case NOT_PRESSED:
         default:
-            case NOT_PRESSED:
             return;
     }
 
-    if (NULL != label) {
+    if (nullptr != label) {
         Serial.print(F(" on "));
         Serial.print(label);
     }
