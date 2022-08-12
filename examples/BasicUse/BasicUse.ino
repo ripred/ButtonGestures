@@ -14,7 +14,8 @@
 // NOTE: change/define the following pin(s) based on your project/connections
 #define   BUTTON_PIN    2
 
-ButtonGestures  button(BUTTON_PIN, LOW, INPUT_PULLUP);
+//                     Arduino pin     Active HIGH/LOW         Input Mode
+ButtonGestures  button(BUTTON_PIN,           LOW,             INPUT_PULLUP);
 
 //
 // This function will report the passed button state along with a label
