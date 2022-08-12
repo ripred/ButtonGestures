@@ -56,12 +56,12 @@ void setup(void) {
     Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
 
     // register the functions we want for each gesture:
-    button.set_callback(SHORT1, function1);
-    button.set_callback( LONG1, function2);
-    button.set_callback(SHORT2, function3);
-    button.set_callback( LONG2, function4);
-    button.set_callback(SHORT3, function5);
-    button.set_callback( LONG3, function6);
+    button.set_callback(SHORT1, function1);     // normal single click and release
+    button.set_callback( LONG1, function2);     // normal single click and hold
+    button.set_callback(SHORT2, function3);     // double click and release
+    button.set_callback( LONG2, function4);     // double click and hold
+    button.set_callback(SHORT3, function5);     // triple click and release
+    button.set_callback( LONG3, function6);     // triple click and hold
 }
 
 void loop(void) {
