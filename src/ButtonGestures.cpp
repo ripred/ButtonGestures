@@ -119,8 +119,8 @@ uint8_t ButtonGestures::check_button_gesture() {
     // The user has released the button, but this might be a double-tap.  Check again and decide.
     presstime = millis() + ALLOWED_MULTIPRESS_DELAY;
     while (millis() < presstime) {
-    if (button_pressed()) {
-        presstime = millis() + KEYLONGDELAY;
+        if (button_pressed()) {
+            presstime = millis() + KEYLONGDELAY;
             while (button_pressed()) {
                 if (millis() >= presstime) {
                     return DOUBLE_PRESS_LONG;
