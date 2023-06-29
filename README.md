@@ -1,4 +1,4 @@
-Button Gestures Library
+Arduino Button Gestures Library
 
 This library allows you to use a single push button to be
 able to invoke up to 6 different functions!
