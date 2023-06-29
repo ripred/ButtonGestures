@@ -1,7 +1,7 @@
 Button Gestures Library
 
 This library allows you to use a single push button to be
-able to invoke up to 6 different functions.
+able to invoke up to 6 different functions!
 
 The button gestures include:
 
@@ -13,4 +13,4 @@ The button gestures include:
     * Triple press short (triple click)            ---> call func5
     * Triple press long  (triple click and hold)   ---> call func6
 
-Easy to use. Includes two sample sketches. The first sketch shows how to use the basic functions. The second sketch shows how to register callback functions that will be called for a given gesture.
+Easy to use. Includes two sample sketches. The first sketch shows how to use the basic functions in a polled manner. The second sketch shows how to register callback functions that will be autmatically called for up to 6 different gestures!
