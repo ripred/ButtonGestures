@@ -62,7 +62,7 @@ void report_button(const uint8_t state, const char* const label = NULL)  {
 
 void setup(void) {
     Serial.begin(115200);
-    uint32_t timer = millis() + 2000;
+    uint32_t timer = millis() + 500;
     while (!Serial && millis() < timer);
     Serial.flush();
     Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
