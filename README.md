@@ -1,8 +1,8 @@
-[![Arduino CI](https://github.com/ripred/Bang/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
-[![Arduino-lint](https://github.com/ripred/Bang/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/Bang/actions/workflows/arduino-lint.yml)
-![code size:](https://img.shields.io/github/languages/code-size/ripred/Bang)
-[![GitHub release](https://img.shields.io/github/release/ripred/Bang.svg?maxAge=3600)](https://github.com/ripred/Bang/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/Bang/blob/master/LICENSE)
+[![Arduino CI](https://github.com/ripred/ButtonGestures/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino-lint](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
+![code size:](https://img.shields.io/github/languages/code-size/ripred/ButtonGestures)
+[![GitHub release](https://img.shields.io/github/release/ripred/ButtonGestures.svg?maxAge=3600)](https://github.com/ripred/ButtonGestures/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ripred/ButtonGestures/blob/master/LICENSE)
 
 Arduino Button Gestures Library
 
