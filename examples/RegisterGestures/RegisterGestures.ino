@@ -23,28 +23,28 @@ ButtonGestures  button(BUTTON_PIN, LOW, INPUT_PULLUP);
 //
 
 void function1(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F(__FUNCTION__));
-    Serial.println(F(" has been called"));
+    Serial.println(__FUNCTION__);
+    Serial.println(" has been called");
 }
 
 void function2(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F("function 2 has been called"));
+    Serial.println("function 2 has been called");
 }
 
 void function3(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F("function 3 has been called"));
+    Serial.println("function 3 has been called");
 }
 
 void function4(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F("function 4 has been called"));
+    Serial.println("function 4 has been called");
 }
 
 void function5(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F("function 5 has been called"));
+    Serial.println("function 5 has been called");
 }
 
 void function6(const uint8_t /*pin*/, const uint8_t /*state*/) {
-    Serial.println(F("function 6 has been called"));
+    Serial.println("function 6 has been called");
 }
 
 
@@ -53,7 +53,7 @@ void setup(void) {
     uint32_t timer = millis() + 1000;
     while (!Serial && millis() < timer);
 
-    Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
+    Serial.println("\n\nArduino Core Library - ButtonGestures Library Test");
 
     // register the functions we want for each gesture:
     button.set_callback(SHORT1, function1);     // normal single click and release
