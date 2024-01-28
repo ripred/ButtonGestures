@@ -48,7 +48,7 @@ void setup(void) {
     uint32_t timer = millis() + 2000;
     while (!Serial && millis() < timer);
     Serial.flush();
-    Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
+    Serial.println("\n\nArduino Core Library - ButtonGestures Library Test");
 }
 
 
