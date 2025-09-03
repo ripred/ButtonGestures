@@ -1,6 +1,9 @@
+<!--
 [![Arduino CI](https://github.com/ripred/ButtonGestures/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
 [![Arduino-lint](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
+
 [![JSON check](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml)
+-->
 ![code size:](https://img.shields.io/github/languages/code-size/ripred/ButtonGestures)
 [![GitHub release](https://img.shields.io/github/release/ripred/ButtonGestures.svg?maxAge=3600)](https://github.com/ripred/ButtonGestures/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/ButtonGestures/blob/master/LICENSE)
