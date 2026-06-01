@@ -1,17 +1,17 @@
-<!--
-[![Arduino CI](https://github.com/ripred/ButtonGestures/workflows/Arduino%20CI/badge.svg)](https://github.com/marketplace/actions/arduino_ci)
+[![Arduino CI](https://github.com/ripred/ButtonGestures/workflows/Arduino%20CI/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino_test_runner.yml)
 [![Arduino-lint](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
-
 [![JSON check](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml)
--->
 ![code size:](https://img.shields.io/github/languages/code-size/ripred/ButtonGestures)
-[![GitHub release](https://img.shields.io/github/release/ripred/ButtonGestures.svg?maxAge=3600)](https://github.com/ripred/ButtonGestures/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/ButtonGestures/blob/master/LICENSE)
+[![Arduino Library Manager](https://www.ardu-badge.com/badge/ButtonGestures.svg)](https://www.ardu-badge.com/ButtonGestures)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/ButtonGestures/blob/main/license.txt)
+[![Stars](https://img.shields.io/github/stars/ripred/ButtonGestures.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/ButtonGestures)
+[![Forks](https://img.shields.io/github/forks/ripred/ButtonGestures.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/ButtonGestures)
 
 Arduino Button Gestures Library
 
 This library allows you to use a single push button to be
-able to invoke up to 6 different functions!
+able to invoke up to 6 different functions without blocking
+the rest of your sketch while it waits to classify the gesture.
 
 The button gestures include:
 
@@ -23,7 +23,26 @@ The button gestures include:
     * Triple press short (triple click)            ---> call func5
     * Triple press long  (triple click and hold)   ---> call func6
 
-Easy to use. Includes two sample sketches. The first sketch shows how to use the basic functions in a polled manner. The second sketch shows how to register callback functions that will be autmatically called for up to 6 different gestures!
+Easy to use. Includes example sketches for basic polling, callback registration, and long-press mode behavior.
+
+`check_button()` is the preferred polling API. It is non-blocking, so call it often from `loop()` and it returns `NOT_PRESSED` until a gesture has been fully recognized. Press detection is still debounced with `KEYDBDELAY`, long press detection still uses `KEYLONGDELAY`, and multi-press detection still uses `ALLOWED_MULTIPRESS_DELAY`.
+
+Because detection is non-blocking, your sketch must keep polling. Avoid long `delay()` calls or other blocking work in `loop()`. If a complete press and release happens between two calls to `check_button()`, the library cannot see that gesture. `check_button_gesture()` is the lower-level recognizer used by `check_button()`; most sketches should call `check_button()`.
+
+Long gestures repeat while the button remains held by default to preserve the original library behavior. If you want each long gesture to report exactly once per physical hold, set single-shot mode:
+
+```cpp
+if (!button.set_long_press_mode(LONG_PRESS_SINGLE_SHOT)) {
+    // invalid mode; previous mode was left unchanged
+}
+```
+
+To enable repeating long gestures explicitly:
+
+```cpp
+button.set_long_press_mode(LONG_PRESS_REPEAT);
+button.set_long_press_repeat_delay(250); // optional repeat interval in ms
+```
 
 Example use:
 ```cpp
@@ -76,6 +95,9 @@ void setup(void) {
     while (!Serial && millis() < timer);
     Serial.flush();
     Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
+
+    // Optional: make long gestures report once per hold.
+    // button.set_long_press_mode(LONG_PRESS_SINGLE_SHOT);
 }
 
 

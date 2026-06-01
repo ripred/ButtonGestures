@@ -1,17 +1,44 @@
----
 name: Arduino CI
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
-  runTest:
+  compile-examples:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v4
+
+      - name: Compile all examples for Arduino Uno
+        uses: arduino/compile-sketches@v1
         with:
-          ruby-version: 2.6
-      - run: |
-          gem install arduino_ci
-          arduino_ci.rb
+          fqbn: arduino:avr:uno
+          libraries: |
+            - source-path: ./
+          sketch-paths: |
+            examples
+          enable-deltas-report: true
+
+      - name: Report size deltas on PRs
+        if: github.event_name == 'pull_request'
+        uses: arduino/report-size-deltas@v1
+
+  host-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build host tests
+        run: |
+          c++ -std=c++11 -Wall -Wextra -pedantic test/host_nonblocking_tests.cpp -o /tmp/buttongestures_host_tests
+
+      - name: Run host tests
+        run: |
+          /tmp/buttongestures_host_tests

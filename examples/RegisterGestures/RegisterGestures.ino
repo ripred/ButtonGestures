@@ -7,6 +7,8 @@
 |*| If a function has been registered to a gesture then the function
 |*| will automatically be called for that gesture.
 |*|
+|*| check_button() is non-blocking, so loop() must keep polling it.
+|*|
 |*| (c) 2022 trent m. wyatt
 |*|
 \*/
@@ -54,6 +56,11 @@ void setup(void) {
     while (!Serial && millis() < timer);
 
     Serial.println("\n\nArduino Core Library - ButtonGestures Library Test");
+    Serial.println("Keep loop() non-blocking so button callbacks are not missed.");
+
+    // Long gestures repeat while held by default for compatibility.
+    // Use LONG_PRESS_SINGLE_SHOT when a hold should call its callback once.
+    // button.set_long_press_mode(LONG_PRESS_SINGLE_SHOT);
 
     // register the functions we want for each gesture:
     button.set_callback(SHORT1, function1);     // normal single click and release

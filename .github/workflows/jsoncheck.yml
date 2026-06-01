@@ -4,14 +4,25 @@ on:
   push:
     paths:
       - '**.json'
+      - '.github/workflows/jsoncheck.yml'
   pull_request:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
-      - uses: actions/checkout@v3
-      - name: json-syntax-check
-        uses: limitusus/json-syntax-check@v1
-        with:
-          pattern: "\\.json$"
+      - uses: actions/checkout@v4
+
+      - name: Check JSON syntax
+        run: |
+          set -euo pipefail
+          found=0
+          while IFS= read -r -d '' file; do
+            found=1
+            python3 -m json.tool "$file" >/dev/null
+          done < <(find . -name '*.json' -type f -print0)
+          if [ "$found" -eq 0 ]; then
+            echo "No JSON files found."
+          fi

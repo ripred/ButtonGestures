@@ -5,6 +5,8 @@
 |*| If a gesture has been entered it will be displayed to the
 |*| serial port.
 |*|
+|*| check_button() is non-blocking, so loop() must keep polling it.
+|*|
 |*| (c) 2022 trent m. wyatt
 |*|
 \*/
@@ -49,6 +51,11 @@ void setup(void) {
     while (!Serial && millis() < timer);
     Serial.flush();
     Serial.println("\n\nArduino Core Library - ButtonGestures Library Test");
+    Serial.println("Keep loop() non-blocking so button gestures are not missed.");
+
+    // Long gestures repeat while held by default for compatibility.
+    // Uncomment this for one report per long gesture:
+    // button.set_long_press_mode(LONG_PRESS_SINGLE_SHOT);
 }
 
 

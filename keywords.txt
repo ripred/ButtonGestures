@@ -14,6 +14,12 @@ ButtonPressCallback	KEYWORD1
 ButtonGestures	KEYWORD2
 set_button_input	KEYWORD2
 button_pressed	KEYWORD2
+reset	KEYWORD2
+set_long_press_repeat	KEYWORD2
+set_long_press_mode	KEYWORD2
+long_press_repeat	KEYWORD2
+set_long_press_repeat_delay	KEYWORD2
+long_press_repeat_delay	KEYWORD2
 check_button_gesture	KEYWORD2
 check_button	KEYWORD2
 
@@ -36,6 +42,9 @@ BUTTON_MASK	LITERAL1
 KEYDBDELAY	LITERAL1
 KEYLONGDELAY	LITERAL1
 ALLOWED_MULTIPRESS_DELAY	LITERAL1
+DEFAULT_LONG_REPEAT_DELAY	LITERAL1
+LONG_PRESS_SINGLE_SHOT	LITERAL1
+LONG_PRESS_REPEAT	LITERAL1
 
 # Shorter alias' for the same button gestures:
 NONE	LITERAL1
