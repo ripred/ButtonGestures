@@ -1,7 +1,7 @@
 [![Arduino CI](https://github.com/ripred/ButtonGestures/workflows/Arduino%20CI/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino_test_runner.yml)
 [![Arduino-lint](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
 [![JSON check](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml)
-![code size:](https://img.shields.io/github/languages/code-size/ripred/ButtonGestures)
+![code size:](https://img.shields.io/github/languages/code-size/ripred/buttongestures.svg)
 [![Arduino Library Manager](https://www.ardu-badge.com/badge/ButtonGestures.svg)](https://www.ardu-badge.com/ButtonGestures)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/ButtonGestures/blob/main/license.txt)
 [![Stars](https://img.shields.io/github/stars/ripred/ButtonGestures.svg?style=flat-square&colorB=4183c4)](https://github.com/ripred/ButtonGestures)
