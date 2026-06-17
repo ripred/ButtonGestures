@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Compile all examples for Arduino Uno
         uses: arduino/compile-sketches@v1
@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Build host tests
         run: |
