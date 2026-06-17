@@ -6,6 +6,8 @@
 [![Stars](https://flat.badgen.net/github/stars/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/stargazers)
 [![Forks](https://flat.badgen.net/github/forks/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/network/members)
 
+[![GitHub release](https://flat.badgen.net/github/release/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/releases/latest)
+
 Arduino Button Gestures Library
 
 This library allows you to use a single push button to be
