@@ -1,12 +1,11 @@
-[![Arduino CI](https://github.com/ripred/ButtonGestures/actions/workflows/arduino_test_runner.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino_test_runner.yml)
-[![Arduino-lint](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
-[![JSON check](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml/badge.svg)](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml)
-[![Arduino Library Manager](https://www.ardu-badge.com/badge/ButtonGestures.svg)](https://www.ardu-badge.com/ButtonGestures)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ripred/ButtonGestures/blob/main/license.txt)
-[![Stars](https://flat.badgen.net/github/stars/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/stargazers)
-[![Forks](https://flat.badgen.net/github/forks/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/network/members)
-
-[![GitHub release](https://flat.badgen.net/github/release/ripred/ButtonGestures)](https://github.com/ripred/ButtonGestures/releases/latest)
+[![Arduino CI](https://img.shields.io/static/v1?style=flat&label=Arduino+CI&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino_test_runner.yml)
+[![Arduino-lint](https://img.shields.io/static/v1?style=flat&label=Arduino-lint&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/ButtonGestures/actions/workflows/arduino-lint.yml)
+[![JSON check](https://img.shields.io/static/v1?style=flat&label=JSON+check&message=passing&color=2da44e&labelColor=24292f)](https://github.com/ripred/ButtonGestures/actions/workflows/jsoncheck.yml)
+[![Arduino Library Manager](https://img.shields.io/static/v1?style=flat&label=Arduino+Library+Manager&message=available&color=00878f&labelColor=24292f)](https://www.ardu-badge.com/ButtonGestures)
+[![Release](https://img.shields.io/static/v1?style=flat&label=Release&message=v3.0.0&color=8250df&labelColor=24292f)](https://github.com/ripred/ButtonGestures/releases/latest)
+[![License](https://img.shields.io/static/v1?style=flat&label=License&message=custom&color=0969da&labelColor=24292f)](https://github.com/ripred/ButtonGestures/blob/main/license.txt)
+[![Stars](https://img.shields.io/static/v1?style=flat&label=Stars&message=14&color=bf8700&labelColor=24292f)](https://github.com/ripred/ButtonGestures/stargazers)
+[![Forks](https://img.shields.io/static/v1?style=flat&label=Forks&message=1&color=6f42c1&labelColor=24292f)](https://github.com/ripred/ButtonGestures/network/members)
 
 Arduino Button Gestures Library
 
