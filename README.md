@@ -94,7 +94,7 @@ void setup(void) {
     uint32_t timer = millis() + 500;
     while (!Serial && millis() < timer);
     Serial.flush();
-    Serial.println(F("\n\nArduino Core Library - ButtonGestures Library Test"));
+    Serial.println(F("\n\nArduino ButtonGestures Library Test"));
 
     // Optional: make long gestures report once per hold.
     // button.set_long_press_mode(LONG_PRESS_SINGLE_SHOT);
