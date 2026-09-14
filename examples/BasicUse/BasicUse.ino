@@ -50,7 +50,7 @@ void setup(void) {
     uint32_t timer = millis() + 2000;
     while (!Serial && millis() < timer);
     Serial.flush();
-    Serial.println("\n\nArduino Core Library - ButtonGestures Library Test");
+    Serial.println("\n\nArduino ButtonGestures Library Test");
     Serial.println("Keep loop() non-blocking so button gestures are not missed.");
 
     // Long gestures repeat while held by default for compatibility.
